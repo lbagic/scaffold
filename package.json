@@ -20,7 +20,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc -p tsconfig-cjs.json",
-    "dev": "tsc -w -p tsconfig-cjs.json",
+    "watch": "tsc -w -p tsconfig-cjs.json",
+    "dev": "npx ts-node ./src/index.ts",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "prepare": "husky install",
     "prepack": "npm run build"
