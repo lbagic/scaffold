@@ -24,7 +24,9 @@
     "dev": "npx ts-node ./src/index.ts",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "prepare": "husky install",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "version:patch": "npm version patch",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
     "prompts": "^2.4.2"
