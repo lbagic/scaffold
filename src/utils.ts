@@ -2,9 +2,17 @@ import { spawn } from "child_process";
 import prompts from "prompts";
 
 type Prompt = prompts.PromptObject<"choice">;
-type ChoicePrompt = Required<Pick<Prompt, "message" | "choices">>;
+type SelectPrompt = Required<Pick<Prompt, "message" | "choices">>;
 
-export async function command(cmd: string) {
+export function select(prompt: SelectPrompt): Prompt {
+  return { name: "choice", type: "select", ...prompt };
+}
+
+export function choice(title: string, cmd: string): prompts.Choice {
+  return { title, description: cmd, value: () => executeCommand(cmd) };
+}
+
+export async function executeCommand(cmd: string) {
   const commandList = cmd.split(";").map((cmd) => cmd.trim());
   for (const command of commandList) {
     await new Promise((resolve) =>
@@ -12,19 +20,9 @@ export async function command(cmd: string) {
     );
   }
 }
-export function commandChoice(title: string, cmd: string) {
-  return { title, description: cmd, value: () => command(cmd) };
-}
-export function choice(choice: prompts.Choice) {
-  return choice;
-}
 
-export function prompt(prompt: ChoicePrompt): Prompt {
-  return { name: "choice", type: "select", ...prompt };
-}
-
-export async function run(prompt: Prompt) {
+export async function runPrompts(prompt: prompts.PromptObject<"choice">) {
   const { choice } = await prompts(prompt);
-  if (typeof choice === "object") run(choice);
+  if (typeof choice === "object") runPrompts(choice);
   else if (typeof choice === "function") choice();
 }
