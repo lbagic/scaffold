@@ -4,12 +4,21 @@ import { choice, runPrompts, select } from "./utils";
 const prompts = select({
   message: "What would you like to scaffold today?",
   choices: [
-    choice("Vite", "npm create vite@latest"),
-    choice("Next", "npx create-next-app@latest"),
-    choice("NestJS", "npm i -g @nestjs/cli; nest new"),
-    choice("Astro", "npm create astro@latest"),
-    choice("ESLint", "npm init @eslint/config"),
-    choice("Open Web Component", "npm init @open-wc"),
+    {
+      title: "Astro (multiple options)",
+      value: select({
+        message: "Astro options:",
+        choices: [
+          choice("Astro - scaffold project", "npm create astro@latest"),
+          choice("Tailwind - add to Astro project", "npx astro add tailwind"),
+        ],
+      }),
+    },
+    choice("Eslint - add to project", "npm init @eslint/config"),
+    choice("NestJS - scaffold project", "npm i -g @nestjs/cli; nest new"),
+    choice("Next - scaffold project", "npx create-next-app@latest"),
+    choice("OpenWebComponent - scaffold project", "npm init @open-wc"),
+    choice("Vite - scaffold project", "npm create vite@latest"),
   ],
 });
 
