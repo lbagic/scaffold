@@ -4,7 +4,7 @@
   "version": "0.3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lbagic/scaffold"
+    "url": "git+https://github.com/lbagic/scaffold.git"
   },
   "type": "module",
   "scripts": {
@@ -18,7 +18,7 @@
     "prompts": "^2.4.2"
   },
   "bin": {
-    "@lbagic/scaffold-web": "./src/index.js"
+    "@lbagic/scaffold": "./src/index.js"
   },
   "files": [
     "src",
