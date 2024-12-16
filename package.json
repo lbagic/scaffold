@@ -18,7 +18,7 @@
     "prompts": "^2.4.2"
   },
   "bin": {
-    "@lbagic/scaffold": "./src/index.js"
+    "scaffold": "src/index.js"
   },
   "files": [
     "src",
