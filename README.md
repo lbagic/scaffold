@@ -1,6 +1,14 @@
 # What would you like to scaffold today?
 
-Official scaffolding tools unified under one command.
+Scaffolding tool for official and custom starter templates and installations.
+
+- reactjs template (custom)
+- vite
+- astro
+- eslint
+- nestjs
+- nextjs
+etc...
 
 ```sh
 npx @lbagic/scaffold@latest
