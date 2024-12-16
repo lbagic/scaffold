@@ -1,50 +1,31 @@
 {
   "name": "@lbagic/scaffold",
   "license": "MIT",
-  "version": "0.2.0",
-  "keywords": [
-    "scaffold",
-    "tools",
-    "projects"
-  ],
+  "version": "0.3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/lbagic/scaffold"
   },
-  "bin": {
-    "@lbagic/scaffold": "./dist/cjs/index.js"
-  },
-  "files": [
-    "dist"
-  ],
+  "type": "module",
   "scripts": {
+    "start": "./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc -p tsconfig-cjs.json",
-    "watch": "tsc -w -p tsconfig-cjs.json",
-    "dev": "npx ts-node ./src/index.ts",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "prepare": "husky install",
-    "prepack": "npm run build",
     "version:patch": "npm version patch",
     "publish": "npm publish --access public"
   },
   "dependencies": {
     "prompts": "^2.4.2"
   },
-  "devDependencies": {
-    "@types/node": "^20.4.0",
-    "@types/prompts": "^2.4.4",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint": "^8.44.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
-    "prettier": "^2.8.8",
-    "typescript": "^5.1.6"
+  "bin": {
+    "@lbagic/scaffold-web": "./src/index.js"
   },
-  "lint-staged": {
-    "src/**/*": "npm run lint"
+  "files": [
+    "src",
+    "templates"
+  ],
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9"
   }
 }
