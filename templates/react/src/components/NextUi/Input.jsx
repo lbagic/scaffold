@@ -18,6 +18,7 @@ const Input = extendVariants(NextInput, {
 
 export const InputSearch = extendVariants(Input, {
   defaultVariants: {
+    type: 'search',
     variant: 'underlined',
     size: 'lg',
     endContent: <MagnifyingGlass className="text-primary-500" weight="bold" />,
