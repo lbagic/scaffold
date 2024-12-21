@@ -13,11 +13,11 @@ import Guard from '@/router/Guard.component';
 import { guard } from '@/router/guard.loader';
 import redirectLoader from '@/router/redirect';
 import {
-    Navigate,
-    Route,
-    createBrowserRouter,
-    createRoutesFromElements,
-    redirect,
+  Navigate,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  redirect,
 } from 'react-router';
 import { $account } from '../modules/account';
 
@@ -78,14 +78,5 @@ export const router = createBrowserRouter(
         </Route>
       </Route>
     </Route>
-  ),
-  {
-    future: {
-      v7_fetcherPersist: true,
-      v7_normalizeFormMethod: true,
-      v7_partialHydration: true,
-      v7_relativeSplatPath: true,
-      v7_skipActionErrorRevalidation: true,
-    },
-  }
+  )
 );
