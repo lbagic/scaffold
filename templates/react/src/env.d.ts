@@ -10,8 +10,8 @@ interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
 
-import 'react-router-dom';
-declare module 'react-router-dom' {
+import 'react-router';
+declare module 'react-router' {
   // If you want to accept a specific parameter type, you can define it like this:
   export function useLoaderData<T>(loader?: T): Awaited<ReturnType<T>>;
   export function useRouteLoaderData<T>(

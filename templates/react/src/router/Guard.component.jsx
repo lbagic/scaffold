@@ -1,7 +1,7 @@
 import { $account } from '@/modules/account';
 import { guardHandler } from '@/router/guard';
 import { useStore } from '@nanostores/react';
-import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router';
 
 /**
  * Route Guard component - defaults to user-only

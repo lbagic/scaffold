@@ -1,7 +1,7 @@
 import Logo from '@/assets/icons/Logo';
 import Card from '@/components/NextUi/Card';
 import { CardBody, CardHeader } from '@nextui-org/react';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
 
 export default function AuthLayout() {
   return (

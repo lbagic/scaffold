@@ -12,12 +12,11 @@
  */
 export function guardHandler(params = {}) {
   const { path, account, type = 'user-only' } = params;
-  const { user, subscribed } = account;
+  const { user } = account;
 
   if (type === 'guest-only') {
     if (user) return '/dashboard';
   } else if (type === 'user-only') {
     if (!user) return '/login';
-    if (!subscribed && path !== '/subscription') return '/subscription';
   }
 }

@@ -9,6 +9,11 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    fontFamily: {
+      // Install fonts and import in root layout
+      sans: ['"Inter Variable"', 'sans-serif'], // sans is the default font applied to the app
+      inter: ['"Inter Variable"', 'sans-serif'],
+    },
     extend: {
       spacing: { x: '4.5rem', y: '1.5rem' },
     },

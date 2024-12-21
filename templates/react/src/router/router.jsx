@@ -13,12 +13,12 @@ import Guard from '@/router/Guard.component';
 import { guard } from '@/router/guard.loader';
 import redirectLoader from '@/router/redirect';
 import {
-  Navigate,
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  redirect,
-} from 'react-router-dom';
+    Navigate,
+    Route,
+    createBrowserRouter,
+    createRoutesFromElements,
+    redirect,
+} from 'react-router';
 import { $account } from '../modules/account';
 
 export const router = createBrowserRouter(

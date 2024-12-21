@@ -1,5 +1,5 @@
 import { extendVariants, Button as NextButton } from '@nextui-org/react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { Link, useMatch, useResolvedPath } from 'react-router';
 
 const Button = extendVariants(NextButton, {
   variants: {
@@ -19,7 +19,7 @@ export const ButtonLink = extendVariants(Button, {
   variants: {
     /** @type { Record<string, any> } */
     to: {},
-    /** @type { Record<import('react-router-dom').RelativeRoutingType, any> } */
+    /** @type { Record<import('react-router').RelativeRoutingType, any> } */
     relative: {},
   },
   defaultVariants: {

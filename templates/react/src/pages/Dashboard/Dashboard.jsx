@@ -1,5 +1,5 @@
 import dashboardLoader from '@/pages/Dashboard/dashboardLoader';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router';
 
 export default function Dashboard() {
   const loader = useLoaderData(dashboardLoader);

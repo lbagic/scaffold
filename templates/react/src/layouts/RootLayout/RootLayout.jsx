@@ -1,7 +1,10 @@
+// Register fonts in tailwind.config
+import '@fontsource-variable/inter';
+
 import { GregorianCalendar } from '@internationalized/date';
 import { NextUIProvider } from '@nextui-org/react';
 import { IconContext } from '@phosphor-icons/react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router';
 
 export default function RootLayout() {
   const navigate = useNavigate();
