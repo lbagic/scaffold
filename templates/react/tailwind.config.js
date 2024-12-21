@@ -9,6 +9,9 @@ export default {
     './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    extend: {
+      spacing: { x: '4.5rem', y: '1.5rem' },
+    },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
       current: colors.current,
@@ -16,10 +19,15 @@ export default {
       black: colors.black,
       white: colors.white,
     }),
-    extend: {
-      spacing: {
-        x: '4.5rem',
-        y: '1.5rem',
+    container: {
+      center: true,
+      padding: '1rem',
+      screens: {
+        sm: '1280px',
+        md: '1280px',
+        lg: '1280px',
+        xl: '1280px',
+        '2xl': '1280px',
       },
     },
   },
@@ -46,17 +54,18 @@ export default {
  */
 
 /** @type { Plugin<{ size: number, weight?: number, lineHeight?: number }[]> } */
-function titlesPlugin(titles) {
+function titlesPlugin(titles = []) {
   return function ({ addUtilities }) {
+    if (!titles.length) return;
+    const utilities = {};
     titles.forEach(({ size, weight: fontWeight = 400, lineHeight = 1.2 }) => {
-      addUtilities({
-        [`.title-${size}`]: {
-          fontSize: `${size}px`,
-          fontWeight: `${fontWeight}`,
-          lineHeight: `${lineHeight}`,
-        },
-      });
+      utilities[`.title-${size}`] = {
+        fontSize: `${size}px`,
+        fontWeight: `${fontWeight}`,
+        lineHeight: `${lineHeight}`,
+      };
     });
+    addUtilities(utilities);
   };
 }
 

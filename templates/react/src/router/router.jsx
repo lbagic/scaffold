@@ -9,7 +9,8 @@ import Playground from '@/pages/Playground/Playground';
 import Register from '@/pages/Register/Register';
 import ResetPassword from '@/pages/ResetPassword/ResetPassword';
 import VerifyAccount from '@/pages/VerifyAccount/VerifyAccount';
-import Guard, { guard } from '@/router/Guard';
+import Guard from '@/router/Guard.component';
+import { guard } from '@/router/guard.loader';
 import redirectLoader from '@/router/redirect';
 import {
   Navigate,

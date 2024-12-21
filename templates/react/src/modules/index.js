@@ -7,6 +7,10 @@ import { atom, map } from 'nanostores';
 /**
  * @template T
  * @typedef { import('nanostores').WritableAtom<T> & { reset: () => void } } Atom
+ */
+
+/**
+ * @template T
  * @typedef { import('nanostores').MapStore<T> & { reset: () => void } } Map
  */
 
