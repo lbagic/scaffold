@@ -1,13 +1,28 @@
-// Register fonts in tailwind.config
+// Import fonts (register them in tailwind.config.js)
 import '@fontsource-variable/inter';
 
 import { GregorianCalendar } from '@internationalized/date';
 import { NextUIProvider } from '@nextui-org/react';
 import { IconContext } from '@phosphor-icons/react';
-import { Outlet, useNavigate } from 'react-router';
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
+import { useEffect } from 'react';
+import { Outlet, useNavigate, useNavigation } from 'react-router';
+
+NProgress.configure({
+  showSpinner: false,
+  template:
+    '<div class="bar" role="bar" style="background: hsl(var(--color-primary));"></div>',
+});
 
 export default function RootLayout() {
   const navigate = useNavigate();
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    if (navigation.state === 'loading') NProgress.start();
+    else NProgress.done();
+  }, [navigation.state]);
 
   return (
     <IconContext.Provider value={{ size: 16, weight: 'bold' }}>

@@ -4,6 +4,7 @@ import RootLayout from '@/layouts/RootLayout/RootLayout';
 import Dashboard from '@/pages/Dashboard/Dashboard';
 import dashboardLoader from '@/pages/Dashboard/dashboardLoader';
 import ForgotPassword from '@/pages/ForgotPassword/ForgotPassword';
+import LoaderErrorBoundary from '@/pages/LoaderErrorBoundary/LoaderErrorBoundary';
 import Login from '@/pages/Login/Login';
 import Playground from '@/pages/Playground/Playground';
 import Register from '@/pages/Register/Register';
@@ -23,7 +24,11 @@ import { $account } from '../modules/account';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
+    <Route
+      path="/"
+      element={<RootLayout />}
+      errorElement={<LoaderErrorBoundary />}
+    >
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
       <Route index element={<Navigate to="/dashboard" />} />
 

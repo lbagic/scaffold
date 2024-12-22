@@ -16,6 +16,7 @@ const cfg = {
     '@nanostores/persistent',
     '@nextui-org/react',
     'framer-motion', // @nextui-org/react dependency
+    'nprogress',
     '@fontsource-variable/inter',
   ],
   devDependencies: [

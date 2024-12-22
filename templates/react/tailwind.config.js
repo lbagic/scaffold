@@ -10,7 +10,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      // Install fonts and import in root layout
+      // Register fonts (import them in RootLayout.jsx)
       sans: ['"Inter Variable"', 'sans-serif'], // sans is the default font applied to the app
       inter: ['"Inter Variable"', 'sans-serif'],
     },
@@ -39,7 +39,7 @@ export default {
   darkMode: 'class',
   plugins: [
     nextui({
-      prefix: '',
+      prefix: 'color',
       defaultTheme: 'light',
       layout: {
         radius: { small: '4px', medium: '8px', large: '12px' },

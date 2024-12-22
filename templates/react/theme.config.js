@@ -7,6 +7,7 @@ export const palette = {
     ...commonColors.zinc,
     DEFAULT: '#4C3E2F',
   },
+  muted: '#7C6E5F',
   default: {
     ...commonColors.zinc,
     foreground: '#4C3E2F',
