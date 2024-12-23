@@ -4,12 +4,12 @@ import '@fontsource-variable/inter';
 import { GregorianCalendar } from '@internationalized/date';
 import { NextUIProvider } from '@nextui-org/react';
 import { IconContext } from '@phosphor-icons/react';
-import NProgress from 'nprogress';
+import nProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 import { useEffect } from 'react';
 import { Outlet, useNavigate, useNavigation } from 'react-router';
 
-NProgress.configure({
+nProgress.configure({
   showSpinner: false,
   template:
     '<div class="bar" role="bar" style="background: hsl(var(--color-primary));"></div>',
@@ -20,8 +20,8 @@ export default function RootLayout() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    if (navigation.state === 'loading') NProgress.start();
-    else NProgress.done();
+    if (navigation.state === 'loading') nProgress.start();
+    else nProgress.done();
   }, [navigation.state]);
 
   return (
