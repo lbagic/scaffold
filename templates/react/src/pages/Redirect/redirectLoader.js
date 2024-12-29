@@ -1,8 +1,7 @@
 import { redirect } from 'react-router';
 
 const REDIRECT_FALLBACK = '/';
-
-/** @param { import("react-router").LoaderFunctionArgs } */
+/** @param { import("react-router-dom").LoaderFunctionArgs } */
 export default async function redirectLoader({ params, request }) {
   const redirectType = params.redirectType;
   const searchParams = new URL(request.url).searchParams;

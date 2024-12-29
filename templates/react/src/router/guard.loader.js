@@ -4,7 +4,7 @@ import { redirect } from 'react-router';
 
 /**
  * Loader guard - defaults to user-only
- *
+ * 
  * @param { import('react-router').LoaderFunction } loader
  * @param { GuardParams } params
  * */
@@ -14,9 +14,8 @@ export function guard(loader, params) {
     const account = $account.get();
     const path = new URL(loaderArgs.request.url).pathname;
 
-    const redirectTo = guardHandler({ account, path, ...params });
-
-    if (redirectTo) throw redirect(redirectTo);
+    const to = guardHandler({ account, path, ...params });
+    if (to) throw redirect(to);
     return loader(loaderArgs);
   };
 }

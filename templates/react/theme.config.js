@@ -13,13 +13,13 @@ export const palette = {
     foreground: '#4C3E2F',
     DEFAULT: commonColors.zinc[300],
   },
-  divider: '#ebe5de80',
+  divider: '#ddd',
   content1: {
-    DEFAULT: '#FFFBF4',
+    DEFAULT: '#EFEBE4', // modal color, card color
     foreground: '#4C3E2F',
   },
   content2: {
-    DEFAULT: '#ebe5de80',
+    DEFAULT: '#ecf0ff',
     foreground: '#4C3E2F',
   },
   light: {

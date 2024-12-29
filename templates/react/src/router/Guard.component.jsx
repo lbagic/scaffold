@@ -4,16 +4,15 @@ import { useStore } from '@nanostores/react';
 import { Navigate, Outlet, useLocation } from 'react-router';
 
 /**
- * Route Guard component - defaults to user-only
- *
+ * Component guard - defaults to user-only
+ * 
  * @param { import('@/router/guard').GuardParams } params
  * */
 export default function Guard(params) {
   const account = useStore($account);
   const path = useLocation().pathname;
 
-  const redirectTo = guardHandler({ account, path, ...params });
-
-  if (redirectTo) return <Navigate to={redirectTo} replace />;
+  const to = guardHandler({ account, path, ...params });
+  if (to) return <Navigate to={to} replace />;
   return <Outlet />;
 }

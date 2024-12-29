@@ -1,18 +1,19 @@
 import AppLayout from '@/layouts/AppLayout/AppLayout';
 import AuthLayout from '@/layouts/AuthLayout/AuthLayout';
 import RootLayout from '@/layouts/RootLayout/RootLayout';
+import { $account } from '@/modules/account';
 import Dashboard from '@/pages/Dashboard/Dashboard';
 import dashboardLoader from '@/pages/Dashboard/dashboardLoader';
 import ForgotPassword from '@/pages/ForgotPassword/ForgotPassword';
 import LoaderErrorBoundary from '@/pages/LoaderErrorBoundary/LoaderErrorBoundary';
 import Login from '@/pages/Login/Login';
 import Playground from '@/pages/Playground/Playground';
+import redirectLoader from '@/pages/Redirect/redirectLoader';
 import Register from '@/pages/Register/Register';
 import ResetPassword from '@/pages/ResetPassword/ResetPassword';
 import VerifyAccount from '@/pages/VerifyAccount/VerifyAccount';
 import Guard from '@/router/Guard.component';
 import { guard } from '@/router/guard.loader';
-import redirectLoader from '@/router/redirect';
 import {
   Navigate,
   Route,
@@ -20,7 +21,6 @@ import {
   createRoutesFromElements,
   redirect,
 } from 'react-router';
-import { $account } from '../modules/account';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
