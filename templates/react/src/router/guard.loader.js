@@ -6,7 +6,7 @@ import { redirect } from 'react-router';
  * Loader guard - defaults to user-only
  * 
  * @param { import('react-router').LoaderFunction } loader
- * @param { GuardParams } params
+ * @param { import('@/router/guard').GuardParams } params
  * */
 export function guard(loader, params) {
   /** @param { import('react-router').LoaderFunctionArgs } loaderArgs */

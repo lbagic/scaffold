@@ -1,0 +1,16 @@
+{{#if loader}}
+import {{camelCase name}}Loader from '@/pages/{{name}}/{{camelCase name}}Loader';
+import { useLoaderData } from 'react-router';
+
+{{/if}}
+export default function {{name}}() {
+  {{#if loader}}
+  const { data } = useLoaderData({{camelCase name}}Loader);
+  {{/if}}
+
+  return (
+    <div>
+      <p>{{name}}</p>
+    </div>
+  );
+}

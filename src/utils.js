@@ -1,15 +1,13 @@
-import { spawn } from "child_process";
-import fs from "fs/promises";
-import { join } from "path";
+import { spawn } from 'child_process';
+import fs from 'fs/promises';
+import { join } from 'path';
 
 export async function exec(cmd, cwd = undefined) {
-  const commandList = cmd.split(";").map((cmd) => cmd.trim());
-  for (const command of commandList) {
-    console.log(`Executing: ${command}`);
-    await new Promise((resolve) =>
-      spawn(command, { shell: true, stdio: "inherit", cwd }).on("exit", resolve)
-    );
-  }
+  const command = cmd.trim();
+  console.log(`\x1b[93mExecuting:\x1b[0m ${command}`);
+  await new Promise(resolve =>
+    spawn(command, { shell: true, stdio: 'inherit', cwd }).on('exit', resolve)
+  );
 }
 
 export async function copyFiles(src, dest) {
@@ -48,6 +46,8 @@ export async function removeFiles(root, paths) {
   }
 }
 
-export function log(message) {
-  console.log(`\x1b[92m${message}\x1b[0m`);
-}
+export const msg = {
+  ok: message => `\x1b[92m${message}\x1b[0m`,
+  err: message => `\x1b[91m${message}\x1b[0m`,
+  warn: message => `\x1b[93m${message}\x1b[0m`,
+};

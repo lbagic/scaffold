@@ -46,7 +46,10 @@ const cfg = {
     {
       title: 'NestJS - initialize project',
       description: 'npm i -g @nestjs/cli; nest new',
-      value: () => exec('npm i -g @nestjs/cli; nest new'),
+      value: async () => {
+        await exec('npm i -g @nestjs/cli');
+        await exec('nest new');
+      },
     },
     {
       title: 'Next - initialize project',
