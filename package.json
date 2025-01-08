@@ -11,8 +11,8 @@
     "start": "./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "version:patch": "npm version patch",
-    "publish": "npm publish --access public"
+    "package:patch": "npm version patch",
+    "package:publish": "npm publish --access public"
   },
   "bin": {
     "scaffold": "src/index.js"
