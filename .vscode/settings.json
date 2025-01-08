@@ -15,5 +15,10 @@
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "[handlebars]": {
     "editor.defaultFormatter": ""
-  }
+  },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Use conventional commit message format. Give a detailed description with the reason for changes. List all changed files with short description e.g. - [src/index.js] removed unused code"
+    }
+  ]
 }

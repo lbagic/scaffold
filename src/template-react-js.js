@@ -10,28 +10,32 @@ const cfg = {
   dependencies: [
     '@connectrpc/connect',
     '@connectrpc/connect-web',
-    '@phosphor-icons/react',
-    'react-router',
-    '@nanostores/react',
+    '@fontsource-variable/inter',
     '@nanostores/persistent',
+    '@nanostores/react',
     '@nextui-org/react',
+    '@phosphor-icons/react',
     'framer-motion', // @nextui-org/react dependency
     'nprogress',
-    '@fontsource-variable/inter',
+    'react@latest', // react 19
+    'react-dom@latest', // react 19
+    'react-router',
   ],
   devDependencies: [
-    'prettier',
-    'prettier-plugin-tailwindcss',
-    'tailwindcss',
-    'postcss',
+    '@types/react@latest', // react 19
+    '@types/react-dom@latest', // react 19
     'autoprefixer',
     'husky',
     'lint-staged',
+    'postcss',
+    'prettier',
+    'prettier-plugin-tailwindcss',
+    'tailwindcss',
     'change-case', // scaffold dependency
     'handlebars', // scaffold dependency
     'prompts', // scaffold dependency
   ],
-  remove: ['src/assets/react.svg', 'src/App.css'],
+  remove: ['src/acssets/react.svg', 'src/App.css'],
 };
 
 export async function reactJsTemplate() {

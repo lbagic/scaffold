@@ -1,7 +1,4 @@
-import {
-  persistentAtom as pAtom,
-  persistentMap as pMap,
-} from '@nanostores/persistent';
+import { persistentAtom, persistentMap } from '@nanostores/persistent';
 import { atom, map } from 'nanostores';
 
 /**
@@ -27,7 +24,9 @@ export const store = {
   /** @type { <T>(data: T) => Map<T> } */
   map: data => create(map(data), data),
   /** @type { <T>(name: string, data: T) => Atom<T> } */
-  persistentAtom: (name, data) => create(pAtom(name, data, options), data),
+  persistentAtom: (name, data) =>
+    create(persistentAtom(name, data, options), data),
   /** @type { <T>(name: string, data: T) => Map<T> } */
-  persistentMap: (name, data) => create(pMap(name, data, options), data),
+  persistentMap: (name, data) =>
+    create(persistentMap(name, data, options), data),
 };
