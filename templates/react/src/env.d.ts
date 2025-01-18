@@ -53,3 +53,9 @@ export type DotPaths<T extends object, Exclude = T | Function> = {
         ? `${K}` | `${K}.${DotPaths<T[K], Exclude | T[K]>}`
         : `${K}`;
 }[keyof T & (string | number)];
+
+declare global {
+  interface Function {
+    isPending: boolean;
+  }
+}
